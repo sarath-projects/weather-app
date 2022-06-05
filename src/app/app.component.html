@@ -1,4 +1,4 @@
-<div class="app-container">
+<div class="app-container" *ngIf="pageLoadStatus === 'COMPLETED'">
     <div class="container">
         <div class="current-info">
             <div class="date-container">
@@ -34,23 +34,23 @@
             </div>
         </div>
     </div>
-    <div class="item-container" *ngIf="pageLoadStatus === 'COMPLETED'">
+    <div class="item-container">
         <div class="forecast-container">
             <div>
                 <div>
-                    <canvas baseChart height="260" width="800"
-                      [datasets]="lineChartData"
-                      [labels]="lineChartLabels"
-                      [options]="lineChartOptions"
-                      [colors]="lineChartColors"
-                      [legend]="false"
-                      [chartType]="'line'">
+                    <canvas baseChart height="260" width="900"
+                        [datasets]="lineChartData"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [colors]="lineChartColors"
+                        [legend]="false"
+                        [chartType]="'line'">
                     </canvas>
                   </div>
             </div>
         </div>
     </div>
-    <div *ngIf="pageLoadStatus === 'COMPLETED'" class="future-forecast">
+    <div class="future-forecast">
         <div class="today">
             <div>
                 <div class="day">{{dailyWeatherData[0].day}}</div>

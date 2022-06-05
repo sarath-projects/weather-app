@@ -7,7 +7,7 @@ import { Color, Label } from 'ng2-charts';
 import cities from 'src/assets/data/cities/cities.json';
 import { WeatherService } from './services/weather.service';
 
-type PageLoadStatus = 'LOADING' | 'COMPLETED';
+type PageLoadStatus = 'LOADING' | 'COMPLETED' | 'FAILED';
 
 @Component({
     selector: 'app-root',
@@ -114,6 +114,10 @@ export class AppComponent implements OnInit {
                 this.lineChartData[0].data.push(hour.temp);
             });
             this.pageLoadStatus = 'COMPLETED';
+        }, (err) => {
+            console.error(err);
+            // this can be used to display the error message.
+            this.pageLoadStatus = 'FAILED';
         });
     }
 

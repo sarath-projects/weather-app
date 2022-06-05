@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
-
 .app-container {
     background: url("/assets/image/background/climate2.jpg") center no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
     overflow: scroll;
     height: 100vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: sans-serif;
 }
 
 .container {
@@ -100,7 +98,7 @@
 }
 
 .future-forecast .today .temp {
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .future-forecast .weather-forecast {
